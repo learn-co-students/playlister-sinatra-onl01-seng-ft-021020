@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 
   def self.find_by_slug(slug)
     # Song.find_by(name: slug.gsub('-', ' ').titlecase)
-    Song.where('lower(name) = ?', slug.gsub('-', ' '))
+    Song.where('lower(name) = ?', slug.gsub('-', ' ')).first
   end
 
 end
